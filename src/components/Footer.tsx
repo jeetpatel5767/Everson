@@ -1,101 +1,95 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import Logo from "@/assets/F_Logo.png";
+import Footer_Right from "@/assets/Footer_Right.png"; 
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/about" className="hover:text-accent transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="hover:text-accent transition-colors">
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-accent transition-colors">
-                  Contact
-                </Link>
-              </li>
+    <footer className="relative bg-[#587583] text-white overflow-hidden">
+      <div className="container mx-auto px-4 pt-20 pb-4 relative z-10">
+
+        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr_2fr] gap-y-8 gap-x-6 md:gap-8 text-sm">
+          {/* Contact - wider */}
+          <div className="space-y-4 col-span-2 sm:col-span-2 md:col-span-1">
+            <h3 className="font-bold mb-2">Contact</h3>
+            <p>info@everson.in</p>
+            <p>+91 94245 56793</p>
+            <p className="mt-4">
+              Manufacturer of premium non-woven bags, covers, and fabric products designed for strength, style, and sustainability.
+            </p>
+          </div>
+
+          {/* Quick Access - narrower */}
+          <div className="space-y-2 flex flex-col md:items-end col-span-1 sm:col-span-1">
+            <h3 className="font-bold mb-4">Quick Access</h3>
+            <ul className="space-y-1 flex flex-col md:items-end">
+              <li><Link to="/" className="hover:underline">Home</Link></li>
+              <li><Link to="/about" className="hover:underline">About</Link></li>
+              <li><Link to="/service" className="hover:underline">Service</Link></li>
+              <li><Link to="/product" className="hover:underline">Product</Link></li>
+              <li><Link to="/contact" className="hover:underline">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="hover:text-accent transition-colors">
-                  Catalog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-accent transition-colors">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-accent transition-colors">
-                  Sustainability
-                </a>
-              </li>
+          {/* Categories - narrower */}
+          <div className="space-y-2 flex flex-col md:items-end col-span-1 sm:col-span-1">
+            <h3 className="font-bold mb-4">Categories</h3>
+            <ul className="space-y-1 flex flex-col md:items-end">
+              <li>Non woven</li>
+              <li>Loop Bag</li>
+              <li>Garbage Bag</li>
+              <li>Table cloth</li>
+              <li>Airline headset</li>
             </ul>
           </div>
 
-          {/* Products */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Products</h3>
-            <ul className="space-y-2">
-              <li className="hover:text-accent transition-colors">Non-woven Rolls</li>
-              <li className="hover:text-accent transition-colors">Tote Bags</li>
-              <li className="hover:text-accent transition-colors">Laundry Bags</li>
-              <li className="hover:text-accent transition-colors">Table Covers</li>
+          {/* Products - narrower */}
+          <div className="space-y-2 flex flex-col md:items-end col-span-1 sm:col-span-1">
+            <h3 className="font-bold mb-4">Products</h3>
+            <ul className="space-y-1 flex flex-col md:items-end">
+              <li>Shoes Bag</li>
+              <li>Agri Bag</li>
+              <li>Box Bag</li>
+              <li>Pillow Cover</li>
+              <li>D-Cut Bag</li>
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2">
-                <MapPin size={18} className="mt-1 flex-shrink-0" />
-                <span className="text-sm">
-                  Plot No. 17-B, Atal Nagar, Vizag-530002, India
-                </span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone size={18} className="flex-shrink-0" />
-                <span className="text-sm">+91-8642-245788</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail size={18} className="flex-shrink-0" />
-                <span className="text-sm">info@everson.com</span>
-              </li>
-            </ul>
+          {/* Address - wider */}
+          <div className="space-y-2 col-span-2 sm:col-span-2 md:col-span-1">
+            <h3 className="font-bold mb-4">Address</h3>
+            <p>Samrudhi Industrial park 5 Block - A,</p>
+            <p>Plot No. 02 Near Balson Valve Gate,</p>
+            <p>Rajkot Gondal Highway Vill - Ribda</p>
+            <p>Taluka - Gondal | Dist - Rajkot 360311</p>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-8 h-8 bg-accent rounded-md flex items-center justify-center">
-              <span className="text-accent-foreground font-bold text-lg">E</span>
-            </div>
-            <span className="text-xl font-bold">EVERSON</span>
-          </div>
-          <p className="text-sm text-primary-foreground/80">
-            © {new Date().getFullYear()} Everson. All rights reserved.
+        <div className="mt-8 pt-6 flex flex-col items-start">
+          {/* Logo */}
+          <img
+            src={Logo}
+            alt="Everson Logo"
+            className="h-12 w-auto mb-4"
+          />
+
+          {/* Full-width border */}
+          <div className="border-t border-white/20 w-full mb-4"></div>
+
+          {/* Copyright text */}
+          <p className="text-sm text-left">
+            © 2025 Everson — All Copyright Reserved
           </p>
         </div>
+
       </div>
+
+      {/* Footer Right Image - bottom on mobile */}
+      <img
+        src={Footer_Right}
+        alt="Footer Right"
+        className="absolute md:top-[70px] bottom-0 right-0 h-[200px] md:h-[350px] w-auto pointer-events-none"
+      />
     </footer>
   );
 };

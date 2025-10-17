@@ -6,25 +6,38 @@ const AboutSection = () => {
   return (
     <section className="bg-primary text-primary-foreground py-16 px-4">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">About Everson</h2>
-            <p className="text-lg mb-4 leading-relaxed">
-              Everson, a name synonymous with innovative nonwoven solutions, stands out with its
-              48+ years of exceptional expertise. With an unwavering commitment to quality,
-              environmental consciousness, and customer satisfaction, Everson has earned its position
-              as one of the most reliable names in the nonwoven fabric industry.
-            </p>
-            <Button variant="secondary" asChild>
-              <Link to="/about">Read More</Link>
-            </Button>
-          </div>
-          <div className="flex justify-center">
-            <img
-              src={manufacturing}
-              alt="Manufacturing"
-              className="rounded-lg shadow-2xl max-w-md w-full"
-            />
+        {/* Outer White Rounded Border Wrapper */}
+        <div className="border-2 border-white rounded-3xl p-6 sm:p-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left: Text Section */}
+            <div className="px-2 sm:px-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                About Everson
+              </h2>
+              <p className="text-lg mb-6 leading-relaxed">
+                At Everson, we believe sustainability and innovation go hand in
+                hand. As a trusted manufacturer of non-woven bags and fabric
+                products, we’re dedicated to creating smart alternatives to
+                single-use plastics. From carry bags and garbage bags to
+                tablecloths, covers, and custom packaging, every Everson product
+                reflects our commitment to quality, durability, and
+                eco-responsibility. With advanced manufacturing, reliable
+                delivery, and a passion for progress, we help businesses move
+                toward a cleaner and more sustainable future.
+              </p>
+              <Button variant="secondary" asChild>
+                <Link to="/about">Read More</Link>
+              </Button>
+            </div>
+
+            {/* Right: Image Section */}
+            <div className="flex justify-center px-2 sm:px-4">
+              <img
+                src={manufacturing}
+                alt="Manufacturing"
+                className="rounded-2xl shadow-2xl max-w-md w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

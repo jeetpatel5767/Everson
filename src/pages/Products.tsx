@@ -1,15 +1,15 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import shoppingBag from "@/assets/shopping-bag-product.jpg";
-import shoesBags from "@/assets/shoes-bags-product.jpg";
-import tableCoverProduct from "@/assets/table-cover-product.jpg";
-import laundryBagProduct from "@/assets/laundry-bag-product.jpg";
-import zipBag from "@/assets/zip-bag-product.jpg";
-import carryBag from "@/assets/carry-bag-product.jpg";
-import pillowCover from "@/assets/pillow-cover-product.jpg";
-import giftWrapping from "@/assets/gift-wrapping-product.jpg";
-import antiStaticBag from "@/assets/anti-static-bag-product.jpg";
-import rollsProduct from "@/assets/rolls-product.jpg";
+import shoppingBag from "@/assets/pro1.png";
+import shoesBags from "@/assets/pro2.png";
+import tableCoverProduct from "@/assets/pro3.png";
+import laundryBagProduct from "@/assets/pro4.png";
+import zipBag from "@/assets/pro5.png";
+import carryBag from "@/assets/pro6.png";
+import pillowCover from "@/assets/pro7.png";
+import giftWrapping from "@/assets/pro8.png";
+import antiStaticBag from "@/assets/pro9.png";
+import rollsProduct from "@/assets/pro10.png";
 
 interface ProductSpec {
   bagSize: string;

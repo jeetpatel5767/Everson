@@ -37,10 +37,10 @@ const ProductShowcase = () => {
 
         {/* Section Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[#394D57]">
             Nonwoven Solutions Crafted for Every Need
           </h2>
-          <p className="text-4xl text-muted-foreground">
+          <p className="text-4xl text-muted-[#394D57]">
             Practical | Sustainable | Reliable
           </p>
         </div>

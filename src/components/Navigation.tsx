@@ -14,7 +14,6 @@ const Navigation = () => {
     link.rel = "stylesheet";
     document.head.appendChild(link);
 
-    // ✅ FIXED CLEANUP (no return value)
     return () => {
       if (document.head.contains(link)) {
         document.head.removeChild(link);
@@ -23,7 +22,7 @@ const Navigation = () => {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-transparent">
+    <nav className="sticky top-0 z-50 backdrop-blur-md">
       <div
         className="container mx-auto px-4 text-black"
         style={{ fontFamily: "Inter, sans-serif" }}
@@ -31,11 +30,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img
-              src={Logo}
-              alt="Logo"
-              className="w-36 h-36 object-contain"
-            />
+            <img src={Logo} alt="Logo" className="w-36 h-36 object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -46,7 +41,10 @@ const Navigation = () => {
             <Link to="/about" className="hover:text-accent transition-colors">
               About
             </Link>
-            <Link to="/products" className="hover:text-accent transition-colors">
+            <Link
+              to="/products"
+              className="hover:text-accent transition-colors"
+            >
               Products
             </Link>
             <Link to="/contact" className="hover:text-accent transition-colors">
@@ -65,7 +63,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-black/10">
+          <div className="md:hidden py-4 border-t border-black/10 backdrop-blur-md">
             <div className="flex flex-col space-y-4 text-base font-medium text-black">
               <Link
                 to="/"

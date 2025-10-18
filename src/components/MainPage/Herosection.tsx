@@ -12,14 +12,15 @@ const HeroAndFeatured = () => {
     <>
       {/* Hero Section */}
       <section
-        className="relative bg-no-repeat bg-center h-[80vh] md:h-[45vh] mt-6"
-        style={{
-          backgroundImage: `url(${HeroBg})`,
-          backgroundSize: "80% auto",
-          backgroundPosition: "center center",
-        }}
-      >
-        <div className="absolute inset-0"></div>
+  className="relative h-[30vh] md:h-[45vh] mt-6"
+  style={{
+    backgroundImage: window.innerWidth >= 768 ? `url(${HeroBg})` : "none",
+    backgroundSize: "80% auto",
+    backgroundPosition: "center center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+        <div className="hidden md:block absolute inset-0 "></div>
 
         <div className="relative container mx-auto text-center max-w-4xl mt-16 text-[#587583] px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 sm:mb-6">

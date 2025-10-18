@@ -46,10 +46,10 @@ const ProductShowcase = () => {
         </div>
 
         {/* 3-column layout with responsive behavior */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:h-[1200px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:h-auto">
           {/* --- Column 1 --- */}
           <div className="flex flex-col gap-6 h-auto md:h-full">
-            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[45%]">
+            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[40%]">
               <div className="relative h-full">
                 <img
                   src={products[0].image}
@@ -62,7 +62,7 @@ const ProductShowcase = () => {
               </div>
             </Card>
 
-            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[27.5%]">
+            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[30%]">
               <div className="relative h-full">
                 <img
                   src={products[1].image}
@@ -75,7 +75,7 @@ const ProductShowcase = () => {
               </div>
             </Card>
 
-            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[27.5%]">
+            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[30%]">
               <div className="relative h-full">
                 <img
                   src={products[2].image}
@@ -91,7 +91,7 @@ const ProductShowcase = () => {
 
           {/* --- Column 2 --- */}
           <div className="flex flex-col gap-6 h-auto md:h-full">
-            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[65%]">
+            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[55%]">
               <div className="relative h-full">
                 <img
                   src={products[3].image}
@@ -104,7 +104,7 @@ const ProductShowcase = () => {
               </div>
             </Card>
 
-            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[35%]">
+            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[45%]">
               <div className="relative h-full">
                 <img
                   src={products[4].image}
@@ -120,7 +120,7 @@ const ProductShowcase = () => {
 
           {/* --- Column 3 --- */}
           <div className="flex flex-col gap-6 h-auto md:h-full">
-            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[45%]">
+            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[40%]">
               <div className="relative h-full">
                 <img
                   src={products[5].image}
@@ -133,7 +133,7 @@ const ProductShowcase = () => {
               </div>
             </Card>
 
-            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[27.5%]">
+            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[30%]">
               <div className="relative h-full">
                 <img
                   src={products[6].image}
@@ -146,7 +146,7 @@ const ProductShowcase = () => {
               </div>
             </Card>
 
-            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[27.5%]">
+            <Card className="overflow-hidden group cursor-pointer flex-1 md:basis-[30%]">
               <div className="relative h-full">
                 <img
                   src={products[7].image}

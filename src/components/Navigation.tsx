@@ -24,17 +24,17 @@ const Navigation = () => {
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-md">
       <div
-        className="container mx-auto px-4 text-black"
+        className="container mx-auto py-3 px-8 text-black"
         style={{ fontFamily: "Inter, sans-serif" }}
       >
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={Logo} alt="Logo" className="w-36 h-36 object-contain" />
+            <img src={Logo} alt="Logo" className="w-48 object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10 text-lg font-medium">
+          <div className="hidden md:flex items-center space-x-10 text-md text-[#394D57]">
             <Link to="/" className="hover:text-accent transition-colors">
               Home
             </Link>

@@ -1,5 +1,5 @@
-import React from "react";
-import Slider from "react-slick";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import our1 from "@/assets/our1.jpg";
 import our2 from "@/assets/our2.png";
 import our3 from "@/assets/our3.png";
@@ -19,60 +19,94 @@ const products = [
 ];
 
 const ProductCarousel = () => {
-  const settings = {
-    centerMode: true,
-    centerPadding: "0px",
-    slidesToShow: 6,
-    infinite: true,
-    speed: 500,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: { slidesToShow: 4 },
-      },
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 3 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 1, centerMode: false }, // disable centerMode for small screens
-      },
-    ],
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
+  const containerRef = useRef(null);
+  const x = useMotionValue(0);
+  const smoothX = useSpring(x, { stiffness: 50, damping: 30 });
+
+  // Infinite loop with duplicated items
+  const infiniteProducts = [...products, ...products, ...products, ...products];
+
+  useEffect(() => {
+    // Start from middle of the array to fill left side
+    const itemWidth = 280;
+    const startOffset = -(products.length * itemWidth);
+    x.set(startOffset);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      x.set(x.get() - 1);
+    }, 20);
+
+    return () => clearInterval(interval);
+  }, [x]);
+
+  // Calculate which item is centered
+  useEffect(() => {
+    const unsubscribe = smoothX.on("change", (latest) => {
+      if (containerRef.current) {
+        const itemWidth = 280;
+        const offset = Math.abs(latest % (products.length * itemWidth));
+        const index = Math.floor(offset / itemWidth) % products.length;
+        setActiveIndex(index);
+      }
+    });
+
+    return () => unsubscribe();
+  }, [smoothX]);
 
   return (
-    <div className="w-full py-12 text-center bg-gray-50 overflow-x-hidden">
+    <div className="w-full py-16 text-center bg-gray-50 overflow-hidden">
+      {/* Heading */}
       <h2 className="text-2xl md:text-5xl mb-2 text-[#394D57]">
         Our Nonwoven Product Line
       </h2>
-      <p className="text-xl md:text-5xl mb-8 text-[#394D57]">
+      <p className="text-lg md:text-3xl mb-10 text-[#394D57]">
         Explore Our Versatile Range of Customizable Solutions
       </p>
 
-      <div className="overflow-x-hidden">
-        <Slider {...settings}>
-          {products.map((product, index) => (
-            <div key={index} className="px-1 w-full">
-              <div>
+      {/* Carousel */}
+      <div ref={containerRef} className="relative w-full overflow-hidden h-[450px] flex items-center">
+        <motion.div
+          style={{ x: smoothX }}
+          className="flex gap-2 absolute left-1/2"
+        >
+          {infiniteProducts.map((product, index) => {
+            const isCenter = index % products.length === activeIndex;
+            return (
+              <motion.div
+                key={index}
+                className="flex flex-col items-center justify-center min-w-[280px]"
+                animate={{
+                  scale: isCenter ? 1.25 : 0.9,
+                  opacity: isCenter ? 1 : 0.65,
+                }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
                 <img
                   src={product.img}
                   alt={product.name}
-                  className="mx-auto w-40 md:w-48 lg:w-56 max-w-full"
+                  className="w-44 md:w-52 lg:w-60 xl:w-64 object-contain rounded-lg"
                 />
-                <p className="mt-2 text-sm md:text-base">{product.name}</p>
-              </div>
-            </div>
-          ))}
-        </Slider>
+                <motion.p
+                  className="mt-3 text-sm md:text-lg font-medium text-[#394D57]"
+                  animate={{
+                    fontSize: isCenter ? "1.15rem" : "1rem",
+                    fontWeight: isCenter ? 600 : 500,
+                  }}
+                >
+                  {product.name}
+                </motion.p>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
 
-      <button className="mt-6 inline-flex items-center border border-gray-400 px-4 py-2 rounded hover:bg-gray-100">
-        Read More &rarr;
+      {/* Button */}
+      <button className="mt-10 inline-flex items-center border border-[#394D57] px-6 py-2 rounded hover:bg-[#394D57] hover:text-white transition">
+        Read More →
       </button>
     </div>
   );

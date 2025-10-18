@@ -12,7 +12,7 @@ const HeroAndFeatured = () => {
     <>
       {/* Hero Section */}
       <section
-  className="relative h-[30vh] md:h-[45vh] mt-6"
+  className="relative h-auto md:h-[45vh] mt-6"
   style={{
     backgroundImage: window.innerWidth >= 768 ? `url(${HeroBg})` : "none",
     backgroundSize: "80% auto",

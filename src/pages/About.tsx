@@ -20,7 +20,8 @@ const About = () => {
               <p className=" text-[#394D57] text-sm text-muted-foreground mb-4 uppercase tracking-wide">
                 About us
               </p>
-              <h1 className=" text-[#394D57] text-4xl md:text-5xl font-bold mb-8 leading-tight">
+             <h1 className="text-[#394D57] md:max-w-[500px] text-4xl md:text-5xl font-bold mb-8 leading-tight">
+
                 Empower Your Business with Unmatched Quality
               </h1>
               <Button
@@ -35,14 +36,14 @@ const About = () => {
               </Button>
             </div>
             <div className="space-y-6">
-              <p className="text-muted-foreground leading-relaxed text-[#394D57]">
+              <p className="leading-relaxed text-[#587583] text-xl">
                 Elevate your retail and promotional strategies with our
                 reliable, custom-printed non-woven bags. Empower your marketing
                 with cost-effective, reusable solutions designed for everyday
                 use. Focus on what matters most—building a memorable and
                 responsible brand.
               </p>
-              <p className="text-muted-foreground leading-relaxed text-[#394D57]">
+              <p className="leading-relaxed text-[#587583] text-xl">
                 Get the reliable, customizable non-woven bags your business
                 needs without the complexity.
               </p>
@@ -112,7 +113,7 @@ const About = () => {
 
       {/* Purpose in Every Product */}
       <section className="py-16 px-4 bg-background text-[#394D57]">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-8xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Product Collage */}
             <div className="order-2 lg:order-1">
@@ -159,92 +160,93 @@ const About = () => {
 
       {/* The Spirit of Everson */}
       <section className="py-16 px-4 bg-background">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-8xl">
           <h2 className="text-3xl md:text-4xl font-bold text-start text-[#394D57] mb-12">
             The Spirit of Everson
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Sustainability - Filled */}
-{/* Sustainability - Filled */}
-<Card className="p-5 bg-primary text-primary-foreground border-none flex flex-col justify-between">
-  <h3 className="text-3xl font-bold mb-24">Sustainability</h3>
-  <p className="leading-relaxed opacity-90 mt-auto">
-    We are committed to reducing environmental impact by creating
-    products that are recyclable and responsibly manufactured. Every
-    non-woven solution we design helps replace single-use plastics
-    and enables a cleaner, greener planet. Sustainability isn't just
-    our promise, it's our commitment for future generations.
-  </p>
-</Card>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-{/* Quality - Outline */}
-<Card className="p-5 border-[1px] border-[#394D57] bg-background flex flex-col justify-between">
-  <h3 className="text-3xl font-bold text-muted-foreground mb-24">
-    Quality
-  </h3>
-  <p className="text-muted-foreground leading-relaxed mt-auto">
-    Every product we make reflects our promise of durability,
-    precision, and long lasting performance. Through advanced
-    manufacturing and strict quality checks, we ensure excellence in
-    every stitch, seam, and surface.
-  </p>
-</Card>
+  {/* Sustainability */}
+  <Card className="p-5 border-[1px] border-[#394D57] bg-background flex flex-col justify-between hover:bg-[#587583] hover:text-white transition-colors duration-300">
+    <h3 className="text-3xl font-bold mb-36">Sustainability</h3>
+    <p className="leading-relaxed opacity-90 mt-auto">
+      We are committed to reducing environmental impact by creating
+      products that are recyclable and responsibly manufactured. Every
+      non-woven solution we design helps replace single-use plastics
+      and enables a cleaner, greener planet. Sustainability isn't just
+      our promise, it's our commitment for future generations.
+    </p>
+  </Card>
 
-{/* Innovation - Outline */}
-<Card className="p-5 border-[1px] border-[#394D57] bg-background flex flex-col justify-between">
-  <h3 className="text-3xl font-bold text-muted-foreground mb-24">
-    Innovation
-  </h3>
-  <p className="text-muted-foreground leading-relaxed mt-auto">
-    We continuously evolve, combining modern design, technology, and
-    creativity to deliver smarter non-woven solutions. Our focus on
-    research and development keeps us ahead, transforming simple
-    materials into purposeful, sustainable creations.
-  </p>
-</Card>
+  {/* Quality */}
+  <Card className="p-5 border-[1px] border-[#394D57] bg-background flex flex-col justify-between hover:bg-[#587583] hover:text-white transition-colors duration-300">
+    <h3 className="text-3xl font-bold mb-36">
+      Quality
+    </h3>
+    <p className="leading-relaxed mt-auto">
+      Every product we make reflects our promise of durability,
+      precision, and long lasting performance. Through advanced
+      manufacturing and strict quality checks, we ensure excellence in
+      every stitch, seam, and surface.
+    </p>
+  </Card>
 
-{/* Integrity - Outline */}
-<Card className="p-5 border-[1px] border-[#394D57] bg-background flex flex-col justify-between">
-  <h3 className="text-3xl font-bold text-muted-foreground mb-24">
-    Integrity
-  </h3>
-  <p className="text-muted-foreground leading-relaxed mt-auto">
-    Trust and transparency form the foundation of every relationship
-    we build, from our clients to our team. We believe in honest
-    communication, ethical practices, and delivering exactly what we
-    promise, every single time.
-  </p>
-</Card>
+  {/* Innovation */}
+  <Card className="p-5 border-[1px] border-[#394D57] bg-background flex flex-col justify-between hover:bg-[#587583] hover:text-white transition-colors duration-300">
+    <h3 className="text-3xl font-bold mb-36">
+      Innovation
+    </h3>
+    <p className="leading-relaxed mt-auto">
+      We continuously evolve, combining modern design, technology, and
+      creativity to deliver smarter non-woven solutions. Our focus on
+      research and development keeps us ahead, transforming simple
+      materials into purposeful, sustainable creations.
+    </p>
+  </Card>
 
-{/* Responsibility - Outline */}
-<Card className="p-5 border-[1px] border-[#394D57] bg-background flex flex-col justify-between">
-  <h3 className="text-3xl font-bold text-muted-foreground mb-24">
-    Responsibility
-  </h3>
-  <p className="text-muted-foreground leading-relaxed mt-auto">
-    We believe in progress with purpose, growing our business while
-    caring for the planet and the people around us. Every decision
-    we make is guided by a commitment to accountability and shared
-    success, sustainability, and responsibility for a better society
-    and shared success.
-  </p>
-</Card>
+  {/* Integrity */}
+  <Card className="p-5 border-[1px] border-[#394D57] bg-background flex flex-col justify-between hover:bg-[#587583] hover:text-white transition-colors duration-300">
+    <h3 className="text-3xl font-bold mb-36">
+      Integrity
+    </h3>
+    <p className="leading-relaxed mt-auto">
+      Trust and transparency form the foundation of every relationship
+      we build, from our clients to our team. We believe in honest
+      communication, ethical practices, and delivering exactly what we
+      promise, every single time.
+    </p>
+  </Card>
 
-{/* Customer Commitment - Outline */}
-<Card className="p-5 border-[1px] border-[#394D57] bg-background flex flex-col justify-between">
-  <h3 className="text-3xl font-bold text-muted-foreground mb-24">
-    Customer Commitment
-  </h3>
-  <p className="text-muted-foreground leading-relaxed mt-auto">
-    Our customers are at the heart of everything we do. We listen,
-    adapt, and deliver solutions that align with their goals,
-    building long-term partnerships based on trust, reliability, and
-    satisfaction.
-  </p>
-</Card>
+  {/* Responsibility */}
+  <Card className="p-5 border-[1px] border-[#394D57] bg-background flex flex-col justify-between hover:bg-[#587583] hover:text-white transition-colors duration-300">
+    <h3 className="text-3xl font-bold mb-36">
+      Responsibility
+    </h3>
+    <p className="leading-relaxed mt-auto">
+      We believe in progress with purpose, growing our business while
+      caring for the planet and the people around us. Every decision
+      we make is guided by a commitment to accountability and shared
+      success, sustainability, and responsibility for a better society
+      and shared success.
+    </p>
+  </Card>
 
-          </div>
+  {/* Customer Commitment */}
+  <Card className="p-5 border-[1px] border-[#394D57] bg-background flex flex-col justify-between hover:bg-[#587583] hover:text-white transition-colors duration-300">
+    <h3 className="text-3xl font-bold mb-36">
+      Customer Commitment
+    </h3>
+    <p className="leading-relaxed mt-auto">
+      Our customers are at the heart of everything we do. We listen,
+      adapt, and deliver solutions that align with their goals,
+      building long-term partnerships based on trust, reliability, and
+      satisfaction.
+    </p>
+  </Card>
+
+</div>
+
         </div>
       </section>
 

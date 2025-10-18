@@ -30,120 +30,149 @@ const Products = () => {
       name: "Shopping bag",
       image: shoppingBag,
       specs: [
-        { bagSize: "8*10", gsm: "40+40", unitMob: "", gsmAlt: "" },
-        { bagSize: "10*12", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "12*14", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "9*12", gsm: "40+40", unitMob: "", gsmAlt: "" },
+        { bagSize: "10*14", gsm: "", unitMob: "", gsmAlt: "" },
         { bagSize: "12*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "14*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "16*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "14*19", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*21", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*24", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "18*26", gsm: "", unitMob: "", gsmAlt: "" },
       ],
     },
     {
       name: "Shoes Bags",
       image: shoesBags,
       specs: [
-        { bagSize: "8*10", gsm: "40+40", unitMob: "", gsmAlt: "" },
-        { bagSize: "10*12", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "12*14", gsm: "", unitMob: "", gsmAlt: "" },
+ { bagSize: "9*12", gsm: "40+40", unitMob: "", gsmAlt: "" },
+        { bagSize: "10*14", gsm: "", unitMob: "", gsmAlt: "" },
         { bagSize: "12*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "14*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "16*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "14*19", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*21", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*24", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "18*26", gsm: "", unitMob: "", gsmAlt: "" },
+
       ],
     },
     {
       name: "Table Cover",
       image: tableCoverProduct,
       specs: [
-        { bagSize: "60*90", gsm: "40+40", unitMob: "", gsmAlt: "" },
-        { bagSize: "90*90", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "54*108", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "60*120", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "70*120", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "90*90", gsm: "", unitMob: "", gsmAlt: "" },
+ { bagSize: "9*12", gsm: "40+40", unitMob: "", gsmAlt: "" },
+        { bagSize: "10*14", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*16", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "14*19", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*21", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*24", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "18*26", gsm: "", unitMob: "", gsmAlt: "" },
+
       ],
     },
     {
       name: "Laundry Bag",
       image: laundryBagProduct,
       specs: [
-        { bagSize: "18*24", gsm: "60+20", unitMob: "", gsmAlt: "" },
-        { bagSize: "20*28", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "22*30", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "24*36", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "28*40", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "30*40", gsm: "", unitMob: "", gsmAlt: "" },
+ { bagSize: "9*12", gsm: "40+40", unitMob: "", gsmAlt: "" },
+        { bagSize: "10*14", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*16", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "14*19", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*21", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*24", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "18*26", gsm: "", unitMob: "", gsmAlt: "" },
+
       ],
     },
     {
       name: "Zip Bag",
       image: zipBag,
       specs: [
-        { bagSize: "8*10", gsm: "40+40", unitMob: "", gsmAlt: "" },
-        { bagSize: "10*12", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "12*14", gsm: "", unitMob: "", gsmAlt: "" },
+ { bagSize: "9*12", gsm: "40+40", unitMob: "", gsmAlt: "" },
+        { bagSize: "10*14", gsm: "", unitMob: "", gsmAlt: "" },
         { bagSize: "12*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "14*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "16*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "14*19", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*21", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*24", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "18*26", gsm: "", unitMob: "", gsmAlt: "" },
+
       ],
     },
     {
       name: "Carry Bag",
       image: carryBag,
       specs: [
-        { bagSize: "8*10", gsm: "60+20", unitMob: "", gsmAlt: "" },
-        { bagSize: "10*12", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "12*14", gsm: "", unitMob: "", gsmAlt: "" },
+ { bagSize: "9*12", gsm: "40+40", unitMob: "", gsmAlt: "" },
+        { bagSize: "10*14", gsm: "", unitMob: "", gsmAlt: "" },
         { bagSize: "12*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "14*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "16*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "14*19", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*21", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*24", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "18*26", gsm: "", unitMob: "", gsmAlt: "" },
+
       ],
     },
     {
       name: "Pillow Cover",
       image: pillowCover,
       specs: [
-        { bagSize: "16*24", gsm: "40+40", unitMob: "", gsmAlt: "" },
-        { bagSize: "18*28", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "20*30", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "20*26", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "17*27", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "18*28", gsm: "", unitMob: "", gsmAlt: "" },
+ { bagSize: "9*12", gsm: "40+40", unitMob: "", gsmAlt: "" },
+        { bagSize: "10*14", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*16", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "14*19", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*21", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*24", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "18*26", gsm: "", unitMob: "", gsmAlt: "" },
+
       ],
     },
     {
       name: "Gift Wrapping",
       image: giftWrapping,
       specs: [
-        { bagSize: "8*10", gsm: "40+40", unitMob: "", gsmAlt: "" },
-        { bagSize: "10*12", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "12*14", gsm: "", unitMob: "", gsmAlt: "" },
+ { bagSize: "9*12", gsm: "40+40", unitMob: "", gsmAlt: "" },
+        { bagSize: "10*14", gsm: "", unitMob: "", gsmAlt: "" },
         { bagSize: "12*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "14*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "16*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "14*19", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*21", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*24", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "18*26", gsm: "", unitMob: "", gsmAlt: "" },
+
       ],
     },
     {
       name: "Anti Static Bag",
       image: antiStaticBag,
       specs: [
-        { bagSize: "8*10", gsm: "60+20", unitMob: "", gsmAlt: "" },
-        { bagSize: "10*12", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "12*14", gsm: "", unitMob: "", gsmAlt: "" },
+ { bagSize: "9*12", gsm: "40+40", unitMob: "", gsmAlt: "" },
+        { bagSize: "10*14", gsm: "", unitMob: "", gsmAlt: "" },
         { bagSize: "12*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "14*16", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "16*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "14*19", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*21", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*24", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "18*26", gsm: "", unitMob: "", gsmAlt: "" },
+
       ],
     },
     {
       name: "Non-woven rolls",
       image: rollsProduct,
       specs: [
-        { bagSize: "Width", gsm: "GSM", unitMob: "", gsmAlt: "" },
-        { bagSize: "80 cm", gsm: "40+40", unitMob: "", gsmAlt: "" },
-        { bagSize: "160 cm", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "240 cm", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "320 cm", gsm: "", unitMob: "", gsmAlt: "" },
-        { bagSize: "", gsm: "", unitMob: "", gsmAlt: "" },
+ { bagSize: "9*12", gsm: "40+40", unitMob: "", gsmAlt: "" },
+        { bagSize: "10*14", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*16", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "12*18", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "14*19", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*21", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "16*24", gsm: "", unitMob: "", gsmAlt: "" },
+        { bagSize: "18*26", gsm: "", unitMob: "", gsmAlt: "" },
+
       ],
     },
   ];
@@ -170,81 +199,70 @@ const Products = () => {
               excellence.
             </p>
           </div>
+{/* Products Catalog */}
+<div className="space-y-12">
+  {products.map((product, index) => (
+    <div
+      key={index}
+      className="border border-[#394D57] bg-white overflow-hidden grid grid-cols-1 md:grid-cols-[320px_1fr]"
+    >
+      {/* Left Side - Image & Product Name */}
+      <div className="flex flex-col items-center justify-center border-r border-[#394D57] bg-white">
+        <div className="w-full h-[300px] flex items-center justify-center overflow-hidden">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <p className="py-3 w-full text-center font-medium text-muted-foreground border-t border-[#394D57]">
+          {product.name}
+        </p>
+      </div>
 
-          {/* Products Catalog */}
-          <div className="space-y-12">
-            {products.map((product, index) => (
-              <div
-                key={index}
-                className="border border-border bg-white overflow-hidden grid grid-cols-1 md:grid-cols-[320px_1fr]"
-              >
-                {/* Left Side - Image & Product Name */}
-                <div className="flex flex-col items-center justify-center border-r border-border bg-white">
-                  <div className="w-full h-[300px] flex items-center justify-center overflow-hidden">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="py-3 w-full text-center font-medium text-muted-foreground border-t border-border">
-                    {product.name}
-                  </p>
-                </div>
+      {/* Right Side - Table */}
+      <div className="w-full">
+        <table className="w-full border-collapse border border-[#394D57] text-sm text-center">
+          <thead>
+            <tr className="border-b-2 border-[#394D57]">
+              <th className="px-4 py-3 font-semibold border-r border-[#394D57]">
+                Bag Size
+              </th>
+              <th className="px-4 py-3 font-semibold border-r border-[#394D57]">
+                GSM
+              </th>
+              <th className="px-4 py-3 font-semibold border-r border-[#394D57]">
+                Jumbo Bags
+              </th>
+              <th className="px-4 py-3 font-semibold">
+                GSM
+              </th>
+            </tr>
+          </thead>
 
-                {/* Right Side - Table */}
-                <div className="w-full">
-                  <table className="w-full border-collapse text-sm">
-                    <thead>
-                      <tr className="bg-muted/30">
-                        <th className="border-r border-b border-border px-4 py-3 text-left font-semibold">
-                          Bag Size
-                        </th>
-                        <th className="border-r border-b border-border px-4 py-3 text-left font-semibold">
-                          GSM
-                        </th>
-                        <th className="border-r border-b border-border px-4 py-3 text-left font-semibold">
-                          Jumbo Bags
-                        </th>
-                        <th className="border-b border-border px-4 py-3 text-left font-semibold">
-                          GSM
-                        </th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      {product.specs.map((spec, specIndex) => (
-                        <tr key={specIndex} className="hover:bg-muted/10">
-                          <td className="border-r border-b border-border px-4 py-2 text-sm">
-                            {spec.bagSize}
-                          </td>
-                          <td className="border-r border-b border-border px-4 py-2 text-sm">
-                            {spec.gsm}
-                          </td>
-                          <td className="border-r border-b border-border px-4 py-2 text-sm">
-                            {spec.unitMob}
-                          </td>
-                          <td className="border-b border-border px-4 py-2 text-sm">
-                            {spec.gsmAlt}
-                          </td>
-                        </tr>
-                      ))}
-
-                      {/* Footer Row */}
-                      <tr className="bg-muted/10">
-                        <td
-                          colSpan={4}
-                          className="border-t border-border px-4 py-3 italic text-muted-foreground"
-                        >
-                          Customize Size Also Available
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+          <tbody>
+            {product.specs.map((spec, specIndex) => (
+              <tr key={specIndex} className="hover:bg-muted/10">
+                <td className="px-4 py-2">{spec.bagSize}</td>
+                <td className="px-4 py-2">{spec.gsm}</td>
+                <td className="px-4 py-2">{spec.unitMob}</td>
+                <td className="px-4 py-2">{spec.gsmAlt}</td>
+              </tr>
             ))}
-          </div>
+
+            {/* Footer Row */}
+            <tr className="border-t-2 border-[#394D57] bg-[#f5f5f5]">
+              <td colSpan={4} className="px-4 py-3 italic">
+                Customize Size Also Available
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  ))}
+</div>
+
         </div>
       </section>
 

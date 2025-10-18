@@ -47,7 +47,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Section - Contact Info */}
             <div>
-              <p className="text-muted-[#394D57] leading-relaxed mb-12 max-w-sm text-2xl">
+              <p className="text-muted-[#394D57] leading-relaxed mb-12 max-w-[350px] text-2xl">
                 If you have any questions or you'd like to find out more about our services,
                 please get in touch.
               </p>
@@ -62,7 +62,7 @@ const Contact = () => {
               </div>
 
               <div className="mb-6">
-                <h3 className="font-medium text-[#394D57] mb-1">Office Address</h3>
+                <h3 className="font-medium text-[#394D57] text-2xl mb-1">Office Address</h3>
                 <p className="text-muted-[#394D57]">
                   Samrudh Industrial park S Block - A,
                   <br />

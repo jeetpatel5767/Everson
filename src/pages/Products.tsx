@@ -154,83 +154,93 @@ const Products = () => {
 
       {/* Header Section */}
       <section className="py-12 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <div className="mb-8">
-            <h1 className="text-5xl font-bold mb-6 text-foreground">
-              EVERSON
-            </h1>
-            <h2 className="text-3xl font-semibold mb-6 text-foreground">Products</h2>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl">
-              Our focus is to ensure Unbeatable Quality Fabrics. Our promise is trust around
-              non-woven bags. It's not the perfect bag it's your needs & to ensure you get the
-              best product at unbelievable.
+        <div className="container mx-auto max-w-8xl">
+          {/* Header: Title + Description Side by Side */}
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-8">
+            <div>
+              <h1 className="text-6xl font-bold text-foreground">EVERSON</h1>
+              <h2 className="text-4xl font-semibold text-foreground">
+                Products
+              </h2>
+            </div>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl text-xl">
+              Carry Your Brand with Unmatched Quality. Discover our premium
+              non-woven bags designed for durability, perfected for your
+              branding, and crafted to make every carry a statement of
+              excellence.
             </p>
           </div>
 
           {/* Products Catalog */}
-          <div className="space-y-8">
+          <div className="space-y-12">
             {products.map((product, index) => (
               <div
                 key={index}
-                className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-6 pb-8 border-b border-border last:border-b-0"
+                className="border border-border bg-white overflow-hidden grid grid-cols-1 md:grid-cols-[320px_1fr]"
               >
-                {/* Product Image */}
-                <div className="flex flex-col items-center">
-                  <div className="border-2 border-border rounded-md overflow-hidden w-[280px] h-[280px] flex items-center justify-center bg-white">
+                {/* Left Side - Image & Product Name */}
+                <div className="flex flex-col items-center justify-center border-r border-border bg-white">
+                  <div className="w-full h-[300px] flex items-center justify-center overflow-hidden">
                     <img
                       src={product.image}
                       alt={product.name}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <p className="mt-4 text-center font-medium text-foreground">
+                  <p className="py-3 w-full text-center font-medium text-muted-foreground border-t border-border">
                     {product.name}
                   </p>
                 </div>
 
-                {/* Specifications Table */}
-                <div className="flex flex-col">
-                  <div className="border-2 border-border rounded-md overflow-hidden">
-                    <table className="w-full">
-                      <thead>
-                        <tr className="bg-muted/30">
-                          <th className="border-r border-b border-border px-4 py-3 text-left font-semibold text-sm">
-                            Bag Size
-                          </th>
-                          <th className="border-r border-b border-border px-4 py-3 text-left font-semibold text-sm">
-                            GSM
-                          </th>
-                          <th className="border-r border-b border-border px-4 py-3 text-left font-semibold text-sm">
-                            Unit/Mob
-                          </th>
-                          <th className="border-b border-border px-4 py-3 text-left font-semibold text-sm">
-                            GSM
-                          </th>
+                {/* Right Side - Table */}
+                <div className="w-full">
+                  <table className="w-full border-collapse text-sm">
+                    <thead>
+                      <tr className="bg-muted/30">
+                        <th className="border-r border-b border-border px-4 py-3 text-left font-semibold">
+                          Bag Size
+                        </th>
+                        <th className="border-r border-b border-border px-4 py-3 text-left font-semibold">
+                          GSM
+                        </th>
+                        <th className="border-r border-b border-border px-4 py-3 text-left font-semibold">
+                          Jumbo Bags
+                        </th>
+                        <th className="border-b border-border px-4 py-3 text-left font-semibold">
+                          GSM
+                        </th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      {product.specs.map((spec, specIndex) => (
+                        <tr key={specIndex} className="hover:bg-muted/10">
+                          <td className="border-r border-b border-border px-4 py-2 text-sm">
+                            {spec.bagSize}
+                          </td>
+                          <td className="border-r border-b border-border px-4 py-2 text-sm">
+                            {spec.gsm}
+                          </td>
+                          <td className="border-r border-b border-border px-4 py-2 text-sm">
+                            {spec.unitMob}
+                          </td>
+                          <td className="border-b border-border px-4 py-2 text-sm">
+                            {spec.gsmAlt}
+                          </td>
                         </tr>
-                      </thead>
-                      <tbody>
-                        {product.specs.map((spec, specIndex) => (
-                          <tr key={specIndex} className="hover:bg-muted/10">
-                            <td className="border-r border-b border-border px-4 py-2 text-sm">
-                              {spec.bagSize}
-                            </td>
-                            <td className="border-r border-b border-border px-4 py-2 text-sm">
-                              {spec.gsm}
-                            </td>
-                            <td className="border-r border-b border-border px-4 py-2 text-sm">
-                              {spec.unitMob}
-                            </td>
-                            <td className="border-b border-border px-4 py-2 text-sm">
-                              {spec.gsmAlt}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                  <p className="mt-3 text-sm text-muted-foreground italic">
-                    Colour - As per Bag Also Available
-                  </p>
+                      ))}
+
+                      {/* Footer Row */}
+                      <tr className="bg-muted/10">
+                        <td
+                          colSpan={4}
+                          className="border-t border-border px-4 py-3 italic text-muted-foreground"
+                        >
+                          Customize Size Also Available
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             ))}

@@ -208,7 +208,7 @@ const Products = () => {
     >
       {/* Left Side - Image & Product Name */}
       <div className="flex flex-col items-center justify-center border-r border-[#394D57] bg-white">
-        <div className="w-full h-[300px] flex items-center justify-center overflow-hidden">
+        <div className="w-full h-[330px] flex items-center justify-center overflow-hidden">
           <img
             src={product.image}
             alt={product.name}

@@ -98,12 +98,9 @@ const Footer = () => {
 
         {/* Description Text - separate */}
         <div className="mt-8">
-<<<<<<< HEAD
-=======
                     <p className="text-lg max-w-[300px] mb-8 leading-relaxed">
             Everson India Limited
           </p>
->>>>>>> 7f01a03 (Hero section, more img, About page)
           <p className="text-lg max-w-[300px] leading-relaxed">
             Manufacturer of premium non-woven bags, covers, and fabric products
             designed for strength, style, and sustainability.

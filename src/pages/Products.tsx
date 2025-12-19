@@ -184,31 +184,32 @@ const Products = () => {
             className="border border-[#D9E0E1] bg-white p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
           >
             {/* Left Side - Images */}
-            <div className="grid grid-cols-5 gap-4">
-              {/* Small images */}
-              <div className="flex flex-col justify-between col-span-1 h-[220px] sm:h-[280px] md:h-[400px] space-y-3">
-                {product.images.slice(1).map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt=""
-                    className="w-full h-1/3 object-contain bg-[#F8FAFA] border border-gray-300 rounded-md"
-                  />
-                ))}
-              </div>
+<div className="grid grid-cols-5 gap-4">
+  {/* Small images */}
+  <div className="flex flex-col justify-between col-span-1 h-[220px] sm:h-[280px] md:h-[400px] space-y-1">
+    {product.images.slice(1).map((img, i) => (
+      <img
+        key={i}
+        src={img}
+        alt=""
+        className="w-full flex-1 object-contain rounded-md"
+      />
+    ))}
+  </div>
 
-              {/* Main image */}
-              <div className="col-span-4">
-                <img
-                  src={product.images[0]}
-                  alt={product.title}
-                  className="w-full h-[220px] sm:h-[280px] md:h-[400px] object-contain bg-[#F8FAFA] border border-gray-300 rounded-md"
-                />
-                <p className="text-center mt-3 font-medium text-lg">
-                  {product.title}
-                </p>
-              </div>
-            </div>
+  {/* Main image */}
+  <div className="col-span-4">
+    <img
+      src={product.images[0]}
+      alt={product.title}
+      className="w-full h-[220px] sm:h-[280px] md:h-[400px] object-contain rounded-md"
+    />
+    <p className="text-center mt-3 font-medium text-lg">
+      {product.title}
+    </p>
+  </div>
+</div>
+
 
             {/* Right Side */}
             <div className="flex flex-col gap-6 text-[#3A4A4F]">

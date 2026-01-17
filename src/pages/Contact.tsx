@@ -17,17 +17,35 @@ const Contact = () => {
     description: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast.success("Thank you for your message! We'll get back to you soon.");
-    setFormData({
-      firstName: "",
-      lastName: "",
-      company: "",
-      email: "",
-      contact: "",
-      description: "",
-    });
+
+    try {
+      const response = await fetch("https://formspree.io/f/xbdddlan", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success("Thank you for your message! We'll get back to you soon.");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          company: "",
+          email: "",
+          contact: "",
+          description: "",
+        });
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Network error. Please try again.");
+    }
   };
 
   const handleChange = (e) => {
@@ -41,10 +59,12 @@ const Contact = () => {
       {/* Header Section */}
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h1 className="text-6xl font-bold mb-24 text-[#394D57]">Get In Touch</h1>
+          <h1 className="text-6xl font-bold mb-24 text-[#394D57]">
+            Get In Touch
+          </h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Left Section - Contact Info */}
+            {/* Left Section */}
             <div className="flex flex-col h-full">
               <p className="text-[#394D57] leading-relaxed mb-8 max-w-[350px] text-2xl">
                 If you have any questions or you'd like to find out more about our services,
@@ -55,11 +75,11 @@ const Contact = () => {
                 Contact Details
               </h2>
 
-              {/* Info Section */}
               <div className="mb-8">
-                <h3 className="text-2xl font-semibold text-[#394D57] mb-2">Info</h3>
+                <h3 className="text-2xl font-semibold text-[#394D57] mb-2">
+                  Info
+                </h3>
                 <p className="text-base text-[#394D57]">
-                  {/* Phone link opens dial pad */}
                   <a
                     href="tel:+917905378953"
                     className="text-[#394D57] hover:text-[#587583] hover:underline transition-colors duration-200"
@@ -67,7 +87,6 @@ const Contact = () => {
                     +91 70953 78953
                   </a>
                   <br />
-                  {/* Email link */}
                   <a
                     href="mailto:sales@everson.in"
                     className="text-[#394D57] hover:text-[#587583] hover:underline transition-colors duration-200"
@@ -77,9 +96,10 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Works Section */}
               <div className="mb-8">
-                <h3 className="text-2xl font-semibold text-[#394D57] mb-2">Works</h3>
+                <h3 className="text-2xl font-semibold text-[#394D57] mb-2">
+                  Works
+                </h3>
                 <p className="text-base text-[#394D57] leading-relaxed">
                   Samrudh Industrial Park, S Block - A,
                   <br />
@@ -91,7 +111,6 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Map */}
               <div className="flex-grow rounded-md overflow-hidden border border-[#D9E0E1]">
                 <iframe
                   title="Everson Map"
@@ -111,7 +130,6 @@ const Contact = () => {
                 className="space-y-6 flex flex-col h-full justify-between"
               >
                 <div className="space-y-6">
-                  {/* First Name */}
                   <div>
                     <Label htmlFor="firstName">First Name*</Label>
                     <Input
@@ -120,11 +138,10 @@ const Contact = () => {
                       value={formData.firstName}
                       onChange={handleChange}
                       required
-                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57] placeholder:text-[#7A8A91] p-2 rounded-none focus:outline-none focus:ring-2 focus:ring-[#587583]"
+                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
                     />
                   </div>
 
-                  {/* Company */}
                   <div>
                     <Label htmlFor="company">Company</Label>
                     <Input
@@ -132,11 +149,10 @@ const Contact = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57] placeholder:text-[#7A8A91] p-2 rounded-none focus:outline-none focus:ring-2 focus:ring-[#587583]"
+                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
                     />
                   </div>
 
-                  {/* Email */}
                   <div>
                     <Label htmlFor="email">Email*</Label>
                     <Input
@@ -146,11 +162,10 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57] placeholder:text-[#7A8A91] p-2 rounded-none focus:outline-none focus:ring-2 focus:ring-[#587583]"
+                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
                     />
                   </div>
 
-                  {/* Contact */}
                   <div>
                     <Label htmlFor="contact">Contact*</Label>
                     <Input
@@ -160,11 +175,10 @@ const Contact = () => {
                       value={formData.contact}
                       onChange={handleChange}
                       required
-                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57] placeholder:text-[#7A8A91] p-2 rounded-none focus:outline-none focus:ring-2 focus:ring-[#587583]"
+                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
                     />
                   </div>
 
-                  {/* Description */}
                   <div>
                     <Label htmlFor="description">Description</Label>
                     <Textarea
@@ -174,12 +188,11 @@ const Contact = () => {
                       value={formData.description}
                       onChange={handleChange}
                       placeholder="Enter your message..."
-                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57] placeholder:text-[#7A8A91] p-2 rounded-none focus:outline-none focus:ring-2 focus:ring-[#587583]"
+                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
                     />
                   </div>
                 </div>
 
-                {/* Submit Button */}
                 <Button
                   type="submit"
                   className="w-full bg-[#587583] hover:bg-[#48646f] text-white rounded-none transition-all"

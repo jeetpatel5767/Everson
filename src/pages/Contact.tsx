@@ -1,56 +1,13 @@
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { toast } from "sonner";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    company: "",
-    email: "",
-    contact: "",
-    description: "",
-  });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch("https://formspree.io/f/xbdddlan", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        toast.success("Thank you for your message! We'll get back to you soon.");
-        setFormData({
-          firstName: "",
-          lastName: "",
-          company: "",
-          email: "",
-          contact: "",
-          description: "",
-        });
-      } else {
-        toast.error("Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      toast.error("Network error. Please try again.");
-    }
-  };
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [state, handleSubmit] = useForm("xbdddlan"); // ✅ Formspree ID
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -64,7 +21,7 @@ const Contact = () => {
           </h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Left Section */}
+            {/* LEFT SECTION */}
             <div className="flex flex-col h-full">
               <p className="text-[#394D57] leading-relaxed mb-8 max-w-[350px] text-2xl">
                 If you have any questions or you'd like to find out more about our services,
@@ -123,83 +80,103 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Right Section - Contact Form */}
+            {/* RIGHT SECTION — FORM */}
             <div className="flex flex-col h-full">
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-6 flex flex-col h-full justify-between"
-              >
-                <div className="space-y-6">
-                  <div>
-                    <Label htmlFor="firstName">First Name*</Label>
-                    <Input
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      required
-                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="company">Company</Label>
-                    <Input
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="email">Email*</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="contact">Contact*</Label>
-                    <Input
-                      id="contact"
-                      name="contact"
-                      type="tel"
-                      value={formData.contact}
-                      onChange={handleChange}
-                      required
-                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="description">Description</Label>
-                    <Textarea
-                      id="description"
-                      name="description"
-                      rows={20}
-                      value={formData.description}
-                      onChange={handleChange}
-                      placeholder="Enter your message..."
-                      className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
-                    />
-                  </div>
+              {state.succeeded ? (
+                <div className="p-8 bg-[#F7F7F5] border border-[#587583] text-[#394D57]">
+                  <h2 className="text-3xl font-semibold mb-4">
+                    Thank you!
+                  </h2>
+                  <p>Your message has been sent successfully.</p>
                 </div>
-
-                <Button
-                  type="submit"
-                  className="w-full bg-[#587583] hover:bg-[#48646f] text-white rounded-none transition-all"
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-6 flex flex-col h-full justify-between"
                 >
-                  Submit
-                </Button>
-              </form>
+                  <div className="space-y-6">
+                    <div>
+                      <Label htmlFor="firstName">First Name*</Label>
+                      <Input
+                        id="firstName"
+                        name="firstName"
+                        required
+                        className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="company">Company</Label>
+                      <Input
+                        id="company"
+                        name="company"
+                        className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="email">Email*</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
+                      />
+                      <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="contact">Contact*</Label>
+                      <Input
+                        id="contact"
+                        name="contact"
+                        type="tel"
+                        required
+                        className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="message">Description</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        rows={20}
+                        placeholder="Enter your message..."
+                        className="bg-[#F7F7F5] border border-[#587583] text-[#394D57]"
+                      />
+                      <ValidationError
+                        prefix="Message"
+                        field="message"
+                        errors={state.errors}
+                      />
+                    </div>
+                  </div>
+
+                  {/* ✅ NEW LINE: Custom Email Subject */}
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Contact Form – Everson"
+                  />
+
+                  {/* Honeypot */}
+                  <input type="text" name="_gotcha" style={{ display: "none" }} />
+
+                  <Button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="w-full bg-[#587583] hover:bg-[#48646f] text-white rounded-none transition-all"
+                  >
+                    {state.submitting ? "Sending..." : "Submit"}
+                  </Button>
+                </form>
+              )}
             </div>
           </div>
         </div>

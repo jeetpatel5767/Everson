@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, ArrowLeft } from "lucide-react";
 import { useState, useEffect } from "react";
 import Logo from "@/assets/Logo.png";
@@ -6,6 +6,7 @@ import Logo from "@/assets/Logo.png";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleNavigate = (path: string) => {
     window.scrollTo(0, 0);
@@ -39,12 +40,26 @@ const Navigation = () => {
               <img src={Logo} alt="Logo" className="w-48 object-contain" />
             </button>
 
-            {/* Desktop */}
-            <div className="hidden md:flex space-x-10 text-[#394D57]">
-              <button onClick={() => handleNavigate("/")}>Home</button>
-              <button onClick={() => handleNavigate("/about")}>About</button>
-              <button onClick={() => handleNavigate("/products")}>Products</button>
-              <button onClick={() => handleNavigate("/contact")}>Contact</button>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-10">
+              {[
+                { name: "Home", path: "/" },
+                { name: "About", path: "/about" },
+                { name: "Products", path: "/products" },
+                { name: "Contact", path: "/contact" },
+              ].map((item) => (
+                <button
+                  key={item.path}
+                  onClick={() => handleNavigate(item.path)}
+                  className={`transition-colors duration-300 ${
+                    location.pathname === item.path
+                      ? "text-[#577583] font-semibold"
+                      : "text-[#394D57]"
+                  }`}
+                >
+                  {item.name}
+                </button>
+              ))}
             </div>
 
             {/* Mobile toggle */}
@@ -78,26 +93,28 @@ const Navigation = () => {
           </button>
         </div>
 
-        {/* MENU CONTENT */}
+        {/* MOBILE MENU CONTENT */}
         <div className="flex flex-col items-center justify-center h-full text-white">
-          {["HOME", "ABOUT", "PRODUCTS", "CONTACT"].map((item, index) => (
-            <button
-              key={item}
-              onClick={() =>
-                handleNavigate(
-                  item === "HOME" ? "/" : `/${item.toLowerCase()}`
-                )
-              }
-              className={`
-                text-3xl font-semibold tracking-wide
-                transition-all duration-700 ease-out
-                ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
-              `}
-              style={{ transitionDelay: `${index * 120 + 200}ms` }}
-            >
-              {item}
-            </button>
-          ))}
+          {["HOME", "ABOUT", "PRODUCTS", "CONTACT"].map((item, index) => {
+            const path = item === "HOME" ? "/" : `/${item.toLowerCase()}`;
+            const isActive = location.pathname === path;
+
+            return (
+              <button
+                key={item}
+                onClick={() => handleNavigate(path)}
+                className={`
+                  text-3xl font-semibold tracking-wide
+                  transition-all duration-700 ease-out
+                  ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
+                  ${isActive ? "underline underline-offset-8" : ""}
+                `}
+                style={{ transitionDelay: `${index * 120 + 200}ms` }}
+              >
+                {item}
+              </button>
+            );
+          })}
         </div>
       </div>
     </nav>

@@ -30,7 +30,6 @@ const Navigation = () => {
     <nav className="sticky top-0 z-50">
       {/* 🔹 FULL WIDTH BLUR BACKGROUND */}
       <div className="w-full backdrop-blur-md bg-white/70">
-        {/* HEADER CONTENT */}
         <div
           className="container mx-auto py-3 px-8 text-black"
           style={{ fontFamily: "Inter, sans-serif" }}
@@ -47,19 +46,32 @@ const Navigation = () => {
                 { name: "About", path: "/about" },
                 { name: "Products", path: "/products" },
                 { name: "Contact", path: "/contact" },
-              ].map((item) => (
-                <button
-                  key={item.path}
-                  onClick={() => handleNavigate(item.path)}
-                  className={`transition-colors duration-300 ${
-                    location.pathname === item.path
-                      ? "text-[#577583] font-semibold"
-                      : "text-[#394D57]"
-                  }`}
-                >
-                  {item.name}
-                </button>
-              ))}
+              ].map((item) => {
+                const isActive = location.pathname === item.path;
+
+                return (
+                  <button
+                    key={item.path}
+                    onClick={() => handleNavigate(item.path)}
+                    className={`
+                      relative pb-1 transition-colors duration-300
+                      ${isActive ? "text-[#577583]" : "text-[#394D57]"}
+                    `}
+                  >
+                    {item.name}
+
+                    {/* Underline */}
+                    <span
+                      className={`
+                        absolute left-0 -bottom-1 h-[2px] w-full bg-[#577583]
+                        transition-transform duration-300 ease-out
+                        ${isActive ? "scale-x-100" : "scale-x-0"}
+                        origin-left
+                      `}
+                    />
+                  </button>
+                );
+              })}
             </div>
 
             {/* Mobile toggle */}
@@ -82,7 +94,7 @@ const Navigation = () => {
           ${isOpen ? "translate-y-0" : "-translate-y-full"}
         `}
       >
-        {/* 🔹 TOP BAR (BACK OPTION) */}
+        {/* 🔹 TOP BAR */}
         <div className="absolute top-6 left-6">
           <button
             onClick={() => setIsOpen(false)}

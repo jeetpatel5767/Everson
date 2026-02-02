@@ -1,5 +1,4 @@
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -184,7 +183,7 @@ const Products = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F8FAFA]">
-      <Navigation />
+  
 
       {/* Header */}
       <section className="text-center py-12 px-4">
@@ -320,7 +319,7 @@ const Products = () => {
         })}
       </section>
 
-      <Footer />
+
     </div>
   );
 };

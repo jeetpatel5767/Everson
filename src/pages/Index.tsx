@@ -1,5 +1,3 @@
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import HeroSection from "@/components/MainPage/Herosection";
 import AboutSection from "@/components/MainPage/AboutSection";
 import ProductShowcase from "@/components/MainPage/ProductShowcase";
@@ -19,14 +17,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      <Navigation />
+
       <HeroSection />
       <AboutSection />
       <ProductShowcase />
       <OurSection />
       <CTASection />
       <BlueprintsSection />
-      <Footer />
+
 
       {/* Sticky Download Button */}
       <button

@@ -1,6 +1,5 @@
 import { useForm, ValidationError } from "@formspree/react";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,7 +10,6 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Navigation />
 
       {/* Header Section */}
       <section className="py-12 px-4">
@@ -182,7 +180,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   );
 };

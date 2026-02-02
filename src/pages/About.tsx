@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
@@ -10,7 +9,7 @@ import productCollage from "@/assets/About_bag.png";
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+
 
       {/* Hero Section */}
       <section className="py-20 px-4 bg-background">
@@ -247,7 +246,7 @@ const About = () => {
         </div>
       </section>
 
-      <Footer />
+
     </div>
   );
 };

@@ -125,6 +125,7 @@ const Navigation = () => {
               >
                 {item}
               </button>
+              
             );
           })}
         </div>
